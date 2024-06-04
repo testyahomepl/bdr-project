@@ -1,6 +1,5 @@
-// ###########################################################
-import { test, expect } from '@playwright/test';
-//import { fakerPL } from "@faker-js/faker";
+
+import { test } from '@playwright/test';
 import { Ecomm } from '../pageObjects/ecomm';
 
 let ecomm: Ecomm
