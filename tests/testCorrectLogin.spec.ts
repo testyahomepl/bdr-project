@@ -17,7 +17,7 @@ test('Poprawne logowanie ', async ({ page }) => {
   //when
   // await page.locator('[id="_username"]').fill(process.env.LOGIN!);
   // await page.locator('[id="_password"]').fill(process.env.PASSWORD!);
-  // await page.getByRole('button', { name: 'Zaloguj się' }).click();
+  // await page.getByRole('button', { name: 'Zaloguj się' }).click(); 
   await ecomm.login().loginToPanel();
   //then
   await ecomm.login().checkSuccessfulLogin()
