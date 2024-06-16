@@ -43,10 +43,19 @@ export class ShoppingCart {
         await this.page.locator('[data-test="onePageCheckoutExternalPaymentButton"]').click();
         await expect(this.page.getByRole('heading', { name: 'Dziękujemy za zakupy!' })).toBeVisible();
     }
-    
+
     async removeFromCart() {
-        //  test na usuwanie 
+        await this.page.locator('[data-test="cart_icon"]').click();
+        await this.page.getByRole('link', { name: 'Idź do kasy' }).click();
+        await this.page.getByRole('link', { name: 'Zakupy bez rejestracji' }).click();
+        await this.page.getByRole('link', { name: 'Edytuj w koszyku' }).click();
+        await this.page.getByRole('button', { name: '' }).click();
     }
+
+    async isCartEmpty() {
+    await expect(this.page.getByText('Twój koszyk jest pusty')).toBeVisible();
+    }
+
 
 }
 
